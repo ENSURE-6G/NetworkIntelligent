@@ -1,5 +1,7 @@
 # ENSURE-6G Network Intelligent Demo
 
+![ENSURE-6G industrial logistics](https://raw.githubusercontent.com/ENSURE-6G/.github/main/profile/assets/ensure-6g-industrial-logistics.png)
+
 This repository contains the Streamlit control-center demo for semantic communication over a Sweden railway track scenario.
 
 ## Run
