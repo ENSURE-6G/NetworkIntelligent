@@ -1,0 +1,84 @@
+<div class="ui story-ui dashboard-ui">
+  <section class="story-header">
+    <div class="eyebrow">ENSURE-6G Validation Console</div>
+    <div class="dashboard-system-strip" aria-label="System status">
+      <span><i></i>System online</span>
+      <span>Gateway TS-04</span>
+      <span>Summer rail scenario</span>
+      <span>Operator view</span>
+    </div>
+    <div class="dashboard-header-main">
+      <div class="dashboard-header-copy">
+        <h1 id="stageTitle">Integrated Semantic Rail System</h1>
+        <p id="stageMessage">Validated components form a control-center workflow for remote rail monitoring.</p>
+      </div>
+      <div class="dashboard-header-health">
+        <article class="dashboard-health-card risk">
+          <span>Active railway track risk</span>
+          <b data-evidence="swedenRisk">Rail buckling risk</b>
+        </article>
+        <article class="dashboard-health-card trust">
+          <span>Trust score</span>
+          <b data-evidence="trustScore">0.96</b>
+        </article>
+        <article class="dashboard-health-card action">
+          <span>Current action</span>
+          <b data-evidence="actionLabel">TSR Issued</b>
+        </article>
+      </div>
+    </div>
+    <div class="dashboard-top-controls">
+      <div class="dashboard-control-block">
+        <span>View mode</span>
+        <div class="view-mode-toggle" aria-label="View mode">
+          <button class="active" data-view-mode="operations" type="button" onclick="window.setViewMode && window.setViewMode('operations')">Operations</button>
+          <button data-view-mode="demo" type="button" onclick="window.setViewMode && window.setViewMode('demo')">Demo</button>
+        </div>
+      </div>
+      <div class="dashboard-control-block">
+        <span>Scenario</span>
+        <div class="season-selector compact-season-selector" aria-label="Season scenario">
+          <button data-season="winter">Winter</button>
+          <button data-season="spring">Spring</button>
+          <button class="active" data-season="summer">Summer</button>
+          <button data-season="autumn">Autumn</button>
+        </div>
+      </div>
+      <div class="dashboard-control-block">
+        <span>Link mode</span>
+        <div class="network-toggle" aria-label="Network mode">
+          <button class="active" data-network="normal">Nominal</button>
+          <button data-network="adverse">Constrained</button>
+        </div>
+      </div>
+      <div class="dashboard-control-block dashboard-network-strip">
+        <span>Live network status</span>
+        <div class="dashboard-network-metrics">
+          <i>Congestion <b id="congestionLabel">Low</b></i>
+          <i>Loss <b id="lossLabel">Low</b></i>
+          <i>Delay <b id="delayLabel">Low</b></i>
+        </div>
+      </div>
+      <div class="dashboard-control-block dashboard-presentation-control">
+        <span>Audience flow</span>
+        <button
+          class="presentation-workflow-button"
+          id="presentationWorkflowButton"
+          type="button"
+        >
+          Presentation Workflow
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <nav class="story-nav dashboard-nav" aria-label="Control center workflow views">
+    <button class="stage-pill active" data-stage="mission">Overview</button>
+    <button class="stage-pill" data-stage="sensing">Incident</button>
+    <button class="stage-pill" data-stage="fusion">Semantic</button>
+    <button class="stage-pill" data-stage="constraint">Link</button>
+    <button class="stage-pill" data-stage="decision">Decision</button>
+    <button class="stage-pill" data-stage="outcome">Coverage</button>
+  </nav>
+
+  <main class="story-stage-panel">

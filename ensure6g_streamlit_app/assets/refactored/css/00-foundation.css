@@ -1,0 +1,63 @@
+  :root {
+    --panel: rgba(8, 17, 28, .78);
+    --line: rgba(129, 209, 255, .24);
+    --text: rgba(255,255,255,.88);
+    --font-scale: 1;
+    --map-font-scale: 1;
+    --font-kicker: calc(clamp(10px, 0.72vw, 12px) * var(--font-scale));
+    --font-micro: calc(clamp(7.8px, 0.52vw, 9.4px) * var(--font-scale));
+    --font-xxs: calc(clamp(8.6px, 0.58vw, 10.2px) * var(--font-scale));
+    --font-xs: calc(clamp(9.8px, 0.68vw, 11.4px) * var(--font-scale));
+    --font-sm: calc(clamp(11px, 0.78vw, 13.4px) * var(--font-scale));
+    --font-md: calc(clamp(12.4px, 0.92vw, 15.4px) * var(--font-scale));
+    --font-lg: calc(clamp(14.2px, 1.06vw, 18.6px) * var(--font-scale));
+    --font-xl: calc(clamp(16.8px, 1.24vw, 22.8px) * var(--font-scale));
+    --font-display: calc(clamp(23px, 1.9vw, 36px) * var(--font-scale));
+    --font-hero: calc(clamp(31px, 2.55vw, 48px) * var(--font-scale));
+    --font-header-title: calc(clamp(33px, 2.8vw, 54px) * var(--font-scale));
+    --font-header-body: calc(clamp(13.5px, 1vw, 17px) * var(--font-scale));
+    --font-stage-pill: calc(clamp(10px, 0.8vw, 12px) * var(--font-scale));
+    --font-stage-title: calc(clamp(30px, 2.45vw, 50px) * var(--font-scale));
+    --font-body: calc(clamp(13.5px, 1vw, 17.5px) * var(--font-scale));
+    --font-label: calc(clamp(9.2px, 0.64vw, 10.8px) * var(--font-scale));
+    --font-card-title: calc(clamp(18px, 1.28vw, 26px) * var(--font-scale));
+    --font-detail: calc(clamp(10.5px, 0.8vw, 12.8px) * var(--font-scale));
+    --font-metric: calc(clamp(18px, 1.24vw, 24px) * var(--font-scale));
+    --font-mono-sm: calc(clamp(9.5px, 0.72vw, 11.6px) * var(--font-scale));
+    --font-mono-md: calc(clamp(10.4px, 0.82vw, 13px) * var(--font-scale));
+  }
+
+  html, body {
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background: #07111c;
+    font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  }
+
+  #map {
+    display: block;
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    background: #07111c;
+  }
+
+  .ui {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+  }
+
+  .panel {
+    position: absolute;
+    color: white;
+    background: linear-gradient(135deg, rgba(8,17,28,.84), rgba(8,17,28,.58));
+    border: 1px solid var(--line);
+    box-shadow: 0 22px 70px rgba(0,0,0,.34), inset 0 1px 0 rgba(255,255,255,.08);
+    backdrop-filter: blur(14px);
+    border-radius: 14px;
+    overflow: hidden;
+  }

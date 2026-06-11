@@ -1,0 +1,69 @@
+    <section class="story-stage" data-stage="decision">
+      <div class="stage-kicker">Decision View</div>
+      <h2>Receiver validates and issues action.</h2>
+      <div class="decision-shell">
+        <article class="trust-engine-card">
+          <h3>Decision engine</h3>
+          <div class="decision-proof-strip" aria-label="Decision rule">
+            <div><small>1</small><b>Link survives</b><span data-evidence="semanticReliability">99</span>% delivery</div>
+            <div><small>2</small><b>Trust is valid</b><span>confidence + freshness pass</span></div>
+            <div><small>3</small><b>Policy matches</b><span data-evidence="actionShort">TSR</span> approved</div>
+          </div>
+          <div class="trust-checks">
+            <div class="trust-check" id="trustCheckDelivery"><i>✓</i><span>Link survives</span><b>99% link success</b></div>
+            <div class="trust-check" id="trustCheckTrust"><i>✓</i><span>Trust is valid</span><b data-evidence="trustGate">0.96 confidence · 12 s freshness</b></div>
+            <div class="trust-check" id="trustCheckPolicy"><i>✓</i><span>Policy matches</span><b data-evidence="actionShort">TSR</b></div>
+          </div>
+
+          <div class="phase9-decision-strip">
+            <div class="decision-input"><small>Decision rule</small><strong>3 checks pass</strong></div>
+            <div class="decision-arrow">→</div>
+            <div class="decision-output"><small>Operational action</small><strong data-evidence="actionLabel">TSR Issued</strong></div>
+          </div>
+
+          <div class="receiver-mode-strip" aria-label="Receiver view under adverse network">
+            <article class="receiver-mode-card raw">
+              <span>RAW receiver</span>
+              <b>late / fragile</b>
+              <small><span data-evidence="rawPayload">192.0 KB</span> · <span data-evidence="rawReliability">52</span>% delivery</small>
+            </article>
+            <article class="receiver-mode-card hybrid">
+              <span>HYBRID receiver</span>
+              <b>partial context</b>
+              <small><span data-evidence="hybridPayload">23.2 KB</span> · <span data-evidence="hybridReliability">82</span>% delivery</small>
+            </article>
+            <article class="receiver-mode-card semantic">
+              <span>SEMANTIC receiver</span>
+              <b>TMS action ready</b>
+              <small><span data-evidence="semanticPayload">169 B</span> · <span data-evidence="semanticReliability">99</span>% delivery</small>
+            </article>
+          </div>
+        </article>
+
+        <article class="receiver-card">
+          <h3>Receiver status</h3>
+          <div class="packet-preview-grid receiver-summary-grid">
+            <div><small>Risk</small><b data-evidence="swedenRisk">Rail buckling risk</b></div>
+            <div><small>Confidence</small><b data-evidence="confidence">0.96</b></div>
+            <div><small>Freshness</small><b data-evidence="freshness">12 s</b></div>
+            <div><small>Action</small><b data-evidence="actionShort">TSR</b></div>
+          </div>
+          <details class="semantic-packet-details">
+            <summary>Show full receiver packet</summary>
+            <pre class="semantic-received">{
+  "receiver_goal": "issue safe railway track action",
+  "risk_label": "high",
+  "confidence": 0.96,
+  "freshness_s": 12,
+  "integrity": "signed",
+  "recommended_action": "issue_tsr"
+}</pre>
+          </details>
+          <div class="trust-score-ring">
+            <div class="trust-score-value"><strong data-evidence="trustScore">0.96</strong><span>trust score</span></div>
+          </div>
+          <div class="receiver-policy-note" id="receiverPolicyNote">Fallback: if trust fails, request hybrid evidence and raise remote inspection priority instead of acting blind.</div>
+          <div class="tsr-issued-card"><small>Action state</small><strong data-evidence="actionLabel">TSR Issued</strong></div>
+        </article>
+      </div>
+    </section>

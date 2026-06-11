@@ -1,0 +1,125 @@
+  </main>
+
+  <button
+    class="ux-divider-handle"
+    id="uxDividerHandle"
+    type="button"
+    aria-label="Resize dashboard and map panels"
+    title="Drag to resize panels"
+  ></button>
+
+  <section class="map-presentation-frame" aria-label="Railway track digital twin">
+    <canvas id="map"></canvas>
+    <div class="map-production-hud" aria-label="Digital twin system state">
+      <div class="map-hud-brand">
+        <span class="map-live-dot"></span>
+        <b>Digital Twin</b>
+        <small>Sweden railway track</small>
+      </div>
+      <div class="map-hud-status">
+        <span>Link <b id="mapFrameModeMirror">SEMANTIC</b></span>
+        <span>Receiver <b id="mapFrameReceiverMirror">validated</b></span>
+        <span>Route <b>TS-04 -> NOC</b></span>
+      </div>
+    </div>
+    <div class="map-frame-head">
+      <span>Control-center digital twin</span>
+      <b id="mapFrameTitle">Sweden rail digital twin scenario</b>
+      <p id="mapFrameMeta">The digital twin mirrors railway track state, gateway routing, and RAW / HYBRID / SEMANTIC receiver status before action is released.</p>
+    </div>
+    <aside class="map-legend-panel" aria-label="Digital twin legend">
+      <span>Map legend</span>
+      <div><i class="legend-route"></i><b>Railway track</b></div>
+      <div><i class="legend-incident"></i><b>Active incident</b></div>
+      <div><i class="legend-semantic"></i><b>Semantic path</b></div>
+      <div><i class="legend-node"></i><b>Gateway / NOC</b></div>
+    </aside>
+  </section>
+
+  <footer class="dashboard-footer" aria-label="Dashboard status">
+    <div class="dashboard-footer-note">
+      <span>Receiver status</span>
+      <b><span data-evidence="semanticPayload">169 B</span> semantic packet · <span data-evidence="semanticTransfer">3 ms</span> transfer · <span data-evidence="actionLabel">TSR Issued</span></b>
+    </div>
+    <div class="dashboard-footer-log">
+      <span>Last operator note</span>
+      <b id="operatorNoteText">Constrained uplink confirmed. Semantic path remains primary; hybrid stays armed as fallback.</b>
+    </div>
+    <div class="dashboard-demo-controls" aria-label="Demo controls">
+      <button id="prevStage">Previous</button>
+      <button id="playPauseDemo" class="primary">Autoplay</button>
+      <button id="nextStage">Next</button>
+      <button id="resetDemo">Reset</button>
+    </div>
+  </footer>
+
+  <aside class="presentation-workflow-panel" id="presentationWorkflowPanel" hidden aria-label="Presentation workflow">
+    <div class="presentation-workflow-head">
+      <span>5-minute audience flow</span>
+      <b id="presentationWorkflowTitle">Use one guided story instead of free navigation.</b>
+      <p id="presentationWorkflowMeta">Start the workflow to move the live app through the clearest non-technical narrative.</p>
+    </div>
+    <div class="presentation-workflow-progress">
+      <span id="presentationWorkflowStep">Ready</span>
+      <strong id="presentationWorkflowStage">Operational challenge</strong>
+    </div>
+    <p class="presentation-workflow-cue" id="presentationWorkflowCue">Open with the problem: remote railway tracks create more sensor payload than the uplink should carry, while operators need action quickly.</p>
+    <div class="presentation-story-strip" aria-label="Audience story shortcuts">
+      <span>Jump to live proof</span>
+      <div class="presentation-story-jumps">
+        <button class="presentation-story-jump" type="button" data-story-stage="sensing" onclick="window.setSeason && window.setSeason('summer'); window.setCommunicationMode && window.setCommunicationMode('semantic'); window.setViewMode && window.setViewMode('demo'); window.setNetwork && window.setNetwork('normal'); window.setStage && window.setStage('sensing', true);">
+          <b>Incident image</b>
+          <small>real rail anomaly evidence</small>
+        </button>
+        <button class="presentation-story-jump" type="button" data-story-stage="fusion" onclick="window.setSeason && window.setSeason('summer'); window.setCommunicationMode && window.setCommunicationMode('semantic'); window.setViewMode && window.setViewMode('demo'); window.setNetwork && window.setNetwork('normal'); window.setStage && window.setStage('fusion', true);">
+          <b>Encoder</b>
+          <small>pixels become semantic meaning</small>
+        </button>
+        <button class="presentation-story-jump" type="button" data-story-stage="constraint" onclick="window.setSeason && window.setSeason('summer'); window.setCommunicationMode && window.setCommunicationMode('semantic'); window.setViewMode && window.setViewMode('demo'); window.setNetwork && window.setNetwork('adverse'); window.setStage && window.setStage('constraint', true);">
+          <b>3 modes</b>
+          <small>RAW vs HYBRID vs SEMANTIC</small>
+        </button>
+        <button class="presentation-story-jump" type="button" data-story-stage="decision" onclick="window.setSeason && window.setSeason('summer'); window.setCommunicationMode && window.setCommunicationMode('semantic'); window.setViewMode && window.setViewMode('demo'); window.setNetwork && window.setNetwork('adverse'); window.setStage && window.setStage('decision', true);">
+          <b>Receiver checks</b>
+          <small>validation before TSR</small>
+        </button>
+      </div>
+    </div>
+    <div class="presentation-workflow-actions">
+      <button id="presentationWorkflowStart" class="primary" type="button">Start Flow</button>
+      <button id="presentationWorkflowPrev" type="button">Previous</button>
+      <button id="presentationWorkflowNext" type="button">Next Point</button>
+      <button id="presentationWorkflowClose" type="button">Close</button>
+    </div>
+  </aside>
+
+  <div class="drawer-scrim" id="drawerScrim" hidden></div>
+  <aside class="dashboard-drawer" id="dashboardDrawer" aria-hidden="true">
+    <div class="dashboard-drawer-head">
+      <div>
+        <span class="command-panel-kicker" id="drawerKicker">Incident detail</span>
+        <h3 id="drawerTitle">Sundsvall railway track</h3>
+        <p id="drawerSubtitle">Evidence, trust checks, and recommended action for the active incident.</p>
+      </div>
+      <button class="dashboard-drawer-close" id="drawerClose" type="button" onclick="window.closeDrawer && window.closeDrawer()" aria-label="Close details">Close</button>
+    </div>
+    <div class="dashboard-drawer-status" id="drawerStatusChip">New incident</div>
+    <section class="dashboard-drawer-visual" id="drawerVisualSection" hidden></section>
+    <section class="dashboard-drawer-section" id="drawerEvidenceSection">
+      <span id="drawerEvidenceLabel">Evidence</span>
+      <div class="drawer-metric-list" id="drawerEvidenceList"></div>
+    </section>
+    <section class="dashboard-drawer-section" id="drawerTrustSection">
+      <span id="drawerTrustLabel">Trust checks</span>
+      <div class="drawer-metric-list" id="drawerTrustList"></div>
+    </section>
+    <section class="dashboard-drawer-section" id="drawerRecommendationSection">
+      <span id="drawerRecommendationLabel">Recommendation</span>
+      <p class="dashboard-drawer-copy" id="drawerRecommendation">Keep semantic path primary while the operator validates the railway track response.</p>
+    </section>
+    <section class="dashboard-drawer-section" id="drawerTimelineSection">
+      <span id="drawerTimelineLabel">Timeline</span>
+      <div class="drawer-timeline" id="drawerTimeline"></div>
+    </section>
+  </aside>
+</div>

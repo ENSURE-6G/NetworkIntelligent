@@ -1,0 +1,46 @@
+    <section class="story-stage" data-stage="sensing">
+      <div class="stage-kicker">Incident Detection View</div>
+      <h2>Active thermal incident on railway track.</h2>
+      <div class="dashboard-kpi-grid compact">
+        <article class="dashboard-kpi-card alert">
+          <span>Severity</span>
+          <b data-evidence="risk">HIGH</b>
+          <small>semantic candidate should be raised to the receiver</small>
+        </article>
+        <article class="dashboard-kpi-card">
+          <span>Confidence</span>
+          <b data-evidence="confidence">0.96</b>
+          <small>edge anomaly detector confidence</small>
+        </article>
+        <article class="dashboard-kpi-card">
+          <span>Location</span>
+          <b>Sundsvall railway track</b>
+          <small>TS-04 sensor and local hotspot ring on map</small>
+        </article>
+      </div>
+      <div class="sensing-layout">
+        <div class="thermal-card real-thermal-card" aria-label="Actual P2 Pro railway thermal preview">
+          <img class="thermal-preview-img" src="evidence/p2pro_representative.png" alt="Actual P2 Pro railway thermal preview" />
+          <div class="thermal-image-shade"></div>
+          <div class="hotspot-marker real-hotspot-marker"></div>
+          <div class="thermal-label">Actual P2 Pro evidence</div>
+          <div class="thermal-temp"><span data-evidence="p99Temp">42.9</span>°C</div>
+        </div>
+
+        <div class="sensing-side">
+          <div class="sensor-meta">
+            <b>Incident metadata</b>
+            <span><em>Sensor</em><strong>TS-04</strong></span>
+            <span><em>Asset</em><strong>Rail / ballast</strong></span>
+            <span><em>Evidence</em><strong><span data-evidence="sampleCount">1,688</span> samples</strong></span>
+            <span><em>Mode</em><strong>Edge anomaly detection</strong></span>
+          </div>
+
+          <div class="detection-result">
+            <div class="alert-pill" style="font-size:14px;">INCIDENT OPEN</div>
+            <div class="scan-big"><span data-evidence="p99Temp">42.9</span>°C</div>
+            <p class="evidence-note">P99 temperature, delta <span data-evidence="deltaTemp">4.5</span>°C, risk <span data-evidence="risk">HIGH</span>. Control center now expects semantic reduction before receiver action.</p>
+          </div>
+        </div>
+      </div>
+    </section>

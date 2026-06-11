@@ -1,0 +1,238 @@
+    <section class="story-stage active funder-impact-stage" data-stage="mission">
+      <div class="stage-kicker">Validation System</div>
+      <h2>Semantic rail workflow.</h2>
+      <p class="mission-lede">Trackside sensing, gateway routing, encoder/decoder logic, and receiver validation are shown as one integrated control-center workflow.</p>
+
+      <div class="funder-alignment-strip system-readiness-strip" aria-label="System readiness evidence">
+        <article>
+          <span>Lab validation</span>
+          <b>Components validated</b>
+        </article>
+        <article>
+          <span>Railway track scenario</span>
+          <b>Relevant railway track scenario</b>
+        </article>
+        <article>
+          <span>Evidence base</span>
+          <b>1,688 thermal samples</b>
+        </article>
+        <article>
+          <span>Integration path</span>
+          <b>Gateway + 5G/6G/LoRa</b>
+        </article>
+      </div>
+
+      <div class="impact-kpi-strip" aria-label="Project impact indicators">
+        <article class="impact-kpi-card">
+          <span>Payload reduction</span>
+          <b data-evidence="semanticReduction">90%+</b>
+          <small>lower routine traffic with semantic mode</small>
+        </article>
+        <article class="impact-kpi-card">
+          <span>Receiver latency</span>
+          <b data-evidence="semanticTransfer">3 ms</b>
+          <small>Semantic packet survives constrained uplink</small>
+        </article>
+        <article class="impact-kpi-card">
+          <span>Validation signal</span>
+          <b>0.96 trust</b>
+          <small>Risk, confidence, freshness, and action checked</small>
+        </article>
+        <article class="impact-kpi-card action">
+          <span>System output</span>
+          <b>TSR ready</b>
+          <small>Risk becomes a control-center decision</small>
+        </article>
+      </div>
+
+      <section class="impact-dashboard-grid" aria-label="Funder impact dashboard">
+        <div class="impact-left-story">
+          <article class="impact-story-block why">
+            <span>Validated workflow</span>
+            <h3>From sensor evidence to operator action.</h3>
+            <p>The system shows task-oriented communication: send the evidence when links are healthy, send compressed evidence when links are limited, and send meaning-only JSON when action is the priority.</p>
+            <div class="transfer-pipeline" aria-label="Sensor evidence to operator action pipeline">
+              <article>
+                <span>1</span>
+                <b>Sensor</b>
+                <small>P2 Pro images + measurements</small>
+              </article>
+              <article>
+                <span>2</span>
+                <b>Encoder</b>
+                <small>selects pixels, features, or meaning</small>
+              </article>
+              <article>
+                <span>3</span>
+                <b>Network</b>
+                <small>gateway + wireless link</small>
+              </article>
+              <article>
+                <span>4</span>
+                <b>Receiver</b>
+                <small>reconstructs preview or validates JSON</small>
+              </article>
+              <article>
+                <span>5</span>
+                <b>Action</b>
+                <small>TSR ready</small>
+              </article>
+            </div>
+            <div class="impact-story-points" aria-label="Remote monitoring constraints">
+              <i>Sensor input</i>
+              <i>Semantic encoder</i>
+              <i>Receiver validation</i>
+            </div>
+          </article>
+
+          <article class="impact-story-block comparison">
+            <div class="impact-block-head">
+              <span>Communication modes</span>
+              <button
+                class="semantic-explainer-link drawer-trigger"
+                type="button"
+                data-drawer-target="semantic-explainer"
+                onclick="window.openDrawer && window.openDrawer('semantic-explainer')"
+              >
+                Explain modes
+              </button>
+            </div>
+            <div class="communication-mode-toggle mission-mode-toggle" aria-label="Communication mode">
+              <button class="communication-mode-chip drawer-trigger" type="button" data-comm-mode="raw" data-drawer-target="transfer-raw" aria-pressed="false">
+                <span>RAW</span>
+                <b data-evidence="rawPayload">192.0 KB</b>
+                <i><span data-evidence="rawTransfer">3146 ms</span></i>
+              </button>
+              <button class="communication-mode-chip drawer-trigger" type="button" data-comm-mode="hybrid" data-drawer-target="transfer-hybrid" aria-pressed="false">
+                <span>HYBRID</span>
+                <b data-evidence="hybridPayload">23.2 KB</b>
+                <i><span data-evidence="hybridTransfer">380 ms</span></i>
+              </button>
+              <button class="communication-mode-chip active drawer-trigger" type="button" data-comm-mode="semantic" data-drawer-target="transfer-semantic" aria-pressed="true">
+                <span>SEMANTIC</span>
+                <b data-evidence="semanticPayload">169 B</b>
+                <i><span data-evidence="semanticTransfer">3 ms</span></i>
+              </button>
+            </div>
+          </article>
+        </div>
+
+        <div class="impact-mode-comparison" aria-label="RAW HYBRID SEMANTIC comparison">
+          <button class="control-mode-card raw drawer-trigger" type="button" data-drawer-target="transfer-raw" onclick="window.openTransferMode && window.openTransferMode('raw')">
+            <div class="control-mode-head">
+              <span>Good connection</span>
+              <b>RAW image + sensor stream</b>
+            </div>
+            <div class="semantic-transfer-system raw-system" aria-label="RAW full payload transfer">
+              <div class="semantic-transfer-images control-mode-visual raw-images">
+                <figure>
+                  <img src="evidence/p2pro_representative.png" alt="Normal rail image from trackside sensor" />
+                  <figcaption>Normal</figcaption>
+                </figure>
+                <figure>
+                  <img src="evidence/p2pro_thermal_heatmap.png" alt="Thermal rail anomaly heatmap" />
+                  <figcaption>Thermal</figcaption>
+                </figure>
+              </div>
+              <div class="semantic-transfer-lane raw">
+                <span>Full payload</span>
+                <i></i>
+                <b><span data-evidence="rawPayload">192.0 KB</span> · <span data-evidence="rawTransfer">3146 ms</span></b>
+              </div>
+              <div class="semantic-receiver-output image-output">
+                <span>Receiver sees</span>
+                <b>Full images + sensor sequence</b>
+              </div>
+            </div>
+            <p>Best for inspection. Highest bandwidth cost.</p>
+            <span class="mode-detail-link">Open transfer details</span>
+          </button>
+
+          <button class="control-mode-card hybrid drawer-trigger" type="button" data-drawer-target="transfer-hybrid" onclick="window.openTransferMode && window.openTransferMode('hybrid')">
+            <div class="control-mode-head">
+              <span>Limited connection</span>
+              <b>Encoder + decoder</b>
+            </div>
+            <div class="semantic-transfer-system hybrid-system" aria-label="Hybrid semantic encoder decoder flow">
+              <div class="semantic-mini-frame">
+                <img src="evidence/p2pro_thermal_heatmap.png" alt="Thermal frame entering hybrid encoder" />
+                <span>Image</span>
+              </div>
+              <div class="semantic-codec-node encoder">
+                <b>Encoder</b>
+                <small>P99 · delta · risk</small>
+              </div>
+              <div class="semantic-transfer-lane hybrid">
+                <span>Compressed packet</span>
+                <i></i>
+                <b><span data-evidence="hybridPayload">23.2 KB</span> · <span data-evidence="hybridTransfer">380 ms</span></b>
+              </div>
+              <div class="semantic-codec-node decoder">
+                <b>Decoder</b>
+                <small>preview + metadata</small>
+              </div>
+              <div class="semantic-mini-frame reconstructed">
+                <img src="evidence/p2pro_thermal_heatmap.png" alt="Reconstructed compact thermal preview" />
+                <span>Reconstructed preview</span>
+              </div>
+            </div>
+            <p>Reduced visual evidence plus metadata.</p>
+            <span class="mode-detail-link">Open transfer details</span>
+          </button>
+
+          <button class="control-mode-card semantic drawer-trigger" type="button" data-drawer-target="transfer-semantic" onclick="window.openTransferMode && window.openTransferMode('semantic')">
+            <div class="control-mode-head">
+              <span>Poor connection</span>
+              <b>Text-only semantic JSON</b>
+            </div>
+            <div class="semantic-transfer-system semantic-system" aria-label="Semantic meaning-only transfer">
+              <div class="semantic-feature-extractor">
+                <span>Extracted from evidence</span>
+                <i>P99 <b data-evidence="p99Temp">42.9</b>°C</i>
+                <i>Delta <b data-evidence="deltaTemp">4.5</b>°C</i>
+                <i>Confidence <b data-evidence="confidence">0.96</b></i>
+              </div>
+              <div class="semantic-transfer-lane semantic">
+                <span>Meaning packet</span>
+                <i></i>
+                <b><span data-evidence="semanticPayload">169 B</span> · <span data-evidence="semanticTransfer">3 ms</span></b>
+              </div>
+              <pre class="semantic-json-preview">{
+  "risk": "rail_buckling",
+  "confidence": 0.96,
+  "action": "issue_tsr"
+}</pre>
+              <div class="semantic-no-image">
+                <span>No image transferred</span>
+                <b>Receiver validates meaning only</b>
+              </div>
+            </div>
+            <p>No detection image sent. Meaning only.</p>
+            <span class="mode-detail-link">Open transfer details</span>
+          </button>
+        </div>
+      </section>
+
+      <section class="evidence-impact-chain" aria-label="Evidence to impact chain">
+        <article>
+          <span>Evidence</span>
+          <b>1,688 samples</b>
+          <small>P2 Pro thermal rail data</small>
+        </article>
+        <article>
+          <span>Meaning</span>
+          <b data-evidence="swedenRisk">Rail buckling risk</b>
+          <small><span data-evidence="confidence">0.96</span> confidence · <span data-evidence="freshness">12 s</span></small>
+        </article>
+        <article>
+          <span>Action</span>
+          <b>TSR ready</b>
+          <small>Receiver validates risk, trust, and policy</small>
+        </article>
+        <article>
+          <span>Impact</span>
+          <b>Operational readiness</b>
+          <small>Ready for controlled pilot and stakeholder validation</small>
+        </article>
+      </section>
+    </section>

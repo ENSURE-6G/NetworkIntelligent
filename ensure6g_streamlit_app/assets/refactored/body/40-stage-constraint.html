@@ -1,0 +1,117 @@
+    <section class="story-stage" data-stage="constraint">
+      <div class="stage-kicker">Link Operations View</div>
+      <h2>Transfer state across the constrained uplink.</h2>
+      <div class="constraint-layout">
+        <div class="communication-question semantic-boardroom-header">
+          <span>Receiver takeaway</span>
+          <b>Same incident. RAW transport lags. Semantic arrives in time for the control center to act.</b>
+          <small>decision value is preserved while uplink load collapses</small>
+        </div>
+
+        <div class="boardroom-hero-moment" aria-label="Why semantic beats raw transfer">
+          <div class="hero-proof semantic">
+            <small>SEMANTIC</small>
+            <b data-evidence="semanticPayload">169 B</b>
+            <span><span data-evidence="semanticTransfer">3 ms</span> · <span data-evidence="semanticReliability">99</span>% delivery</span>
+          </div>
+          <div class="hero-versus">beats</div>
+          <div class="hero-proof raw">
+            <small>RAW</small>
+            <b data-evidence="rawPayload">192.0 KB</b>
+            <span><span data-evidence="rawTransfer">3146 ms</span> · <span data-evidence="rawReliability">52</span>% delivery</span>
+          </div>
+          <div class="hero-win-banner">
+            <strong data-evidence="semanticWinSummary">90%+ lower routine traffic. 4 ms instead of 3146 ms. Receiver can act.</strong>
+          </div>
+        </div>
+
+        <div class="comm-mode-grid">
+          <article class="comm-mode-card raw">
+            <div class="comm-mode-head">
+              <span>RAW</span>
+              <b>send everything</b>
+            </div>
+            <div class="comm-visual raw-visual" aria-label="Raw image payload">
+              <img src="evidence/p2pro_representative.png" alt="Normal rail image payload" />
+              <img src="evidence/p2pro_thermal_heatmap.png" alt="Thermal heatmap payload" />
+            </div>
+            <div class="comm-payload-line"><span data-evidence="rawPayload">192.0 KB</span><i></i></div>
+            <div class="comm-result bad">Too heavy for routine control-center uplink</div>
+          </article>
+
+          <article class="comm-mode-card hybrid">
+            <div class="comm-mode-head">
+              <span>HYBRID</span>
+              <b>send some context</b>
+            </div>
+            <div class="comm-visual hybrid-visual" aria-label="Hybrid preview and metadata payload">
+              <img src="evidence/p2pro_thermal_heatmap.png" alt="Compressed thermal preview" />
+              <pre>{
+  "risk": "high",
+  "p99": 42.9
+}</pre>
+            </div>
+            <div class="comm-payload-line"><span data-evidence="hybridPayload">23.2 KB</span><i></i></div>
+            <div class="comm-result warn">Useful fallback, but not the cleanest receiver path</div>
+          </article>
+
+          <article class="comm-mode-card semantic">
+            <div class="comm-mode-head">
+              <span>SEMANTIC</span>
+              <b>send only what matters</b>
+            </div>
+            <div class="comm-visual semantic-visual" aria-label="Semantic event payload">
+              <div><small>goal</small><strong data-evidence="taskGoal">TSR decision</strong></div>
+              <div><small>freshness</small><strong data-evidence="freshness">12 s</strong></div>
+              <div><small>proof</small><strong data-evidence="integrity">SIGNED</strong></div>
+              <div><small>action</small><strong data-evidence="actionShort">TSR</strong></div>
+            </div>
+            <div class="comm-payload-line"><span data-evidence="semanticPayload">169 B</span><i></i></div>
+            <div class="comm-result good">Small enough to deliver. Clear enough to dispatch.</div>
+          </article>
+        </div>
+
+        <div class="communication-takeaway">
+          <strong>Bottom line:</strong> RAW sends payload. Semantic sends dispatch-ready meaning.
+        </div>
+
+        <div class="semantic-principles">
+          <span>smaller</span>
+          <span>faster</span>
+          <span>more reliable</span>
+          <span>action-ready</span>
+        </div>
+
+        <div class="merged-transfer-row">
+          <div class="transfer-link-visual" aria-label="Transfer link result">
+            <span class="endpoint edge">EDGE</span>
+            <div class="transfer-lane raw"><b>RAW</b><i></i><em><span data-evidence="rawTransfer">3146 ms</span> · <span data-evidence="rawReliability">52</span>%</em></div>
+            <div class="transfer-lane hybrid"><b>HYBRID</b><i></i><em><span data-evidence="hybridTransfer">380 ms</span> · <span data-evidence="hybridReliability">82</span>%</em></div>
+            <div class="transfer-lane semantic"><b>SEMANTIC</b><i></i><em><span data-evidence="semanticTransfer">3 ms</span> · <span data-evidence="semanticReliability">99</span>%</em></div>
+            <span class="endpoint tms">TMS</span>
+          </div>
+
+          <article class="semantic-arrival-card compact">
+            <div>
+              <span>Receiver arrival</span>
+              <b><span data-evidence="semanticReliability">99</span>% delivery · <span data-evidence="semanticTransfer">3 ms</span></b>
+            </div>
+            <div class="arrival-chip-row">
+              <i>goal <strong data-evidence="taskGoal">TSR decision</strong></i>
+              <i>freshness <strong data-evidence="freshness">12 s</strong></i>
+              <i>proof <strong data-evidence="integrity">SIGNED</strong></i>
+            </div>
+            <details class="semantic-packet-details compact">
+              <summary>Show packet</summary>
+              <pre id="semanticArrivalPacket">{
+  "receiver_goal": "issue safe railway track action",
+  "risk_label": "high",
+  "confidence": 0.96,
+  "freshness_s": 12,
+  "recommended_action": "issue_tsr"
+}</pre>
+            </details>
+          </article>
+        </div>
+      </div>
+    </section>

@@ -1,0 +1,89 @@
+    <section class="story-stage" data-stage="fusion">
+      <div class="stage-kicker">Semantic Event View</div>
+      <h2>Edge AI prepares the receiver packet.</h2>
+      <p class="fusion-lede">This is the control-center handoff point: raw evidence stays at the edge, while the receiver gets only the decision-critical fields.</p>
+      <div class="boardroom-proof-strip semantic-proof-strip">
+        <div><small>Input</small><b data-evidence="rawPayload">192.0 KB</b><span>full thermal evidence</span></div>
+        <div class="win"><small>Output</small><b data-evidence="semanticPayload">169 B</b><span>decision-ready meaning</span></div>
+        <div><small>Effect</small><b data-evidence="actionShort">TSR</b><span>operator can act</span></div>
+      </div>
+      <div class="credibility-strip">
+        <span>Credibility</span>
+        <b>Based on <span data-evidence="sampleCount">1,688</span> real P2 Pro rail samples from Sweden-relevant railway track conditions.</b>
+        <small>Semantic packet is grounded in measured evidence, not a synthetic storyboard.</small>
+      </div>
+      <div class="understanding-layout">
+        <article class="fusion-card meaning-source-card">
+          <h3>Source evidence</h3>
+          <div class="evidence-image-pair" aria-label="Normal and thermal evidence from the same P2 Pro frame">
+            <figure>
+              <img class="semantic-evidence-img" src="evidence/p2pro_representative.png" alt="Normal P2 Pro rail view" />
+              <figcaption>Normal</figcaption>
+            </figure>
+            <figure class="thermal">
+              <img class="semantic-evidence-img" src="evidence/p2pro_thermal_heatmap.png" alt="Thermal P2 Pro heatmap" />
+              <figcaption>Thermal</figcaption>
+            </figure>
+          </div>
+          <div class="evidence-chip-grid">
+            <span><small>Matrix</small><b data-evidence="shape">192 x 256</b></span>
+            <span><small>Samples</small><b data-evidence="sampleCount">1,688</b></span>
+            <span><small>P99</small><b><span data-evidence="p99Temp">42.9</span>°C</b></span>
+            <span><small>High risk</small><b data-evidence="highRiskCount">63</b></span>
+          </div>
+
+          <div class="fusion-input-stack semantic-lens-stack">
+            <div class="fusion-input-pill"><span id="seasonIcon1">🌡</span><span id="seasonLabel1">P99 temperature</span><strong id="seasonValue1">42.9°C</strong></div>
+            <div class="fusion-input-pill"><span id="seasonIcon2">📈</span><span id="seasonLabel2">Thermal delta</span><strong id="seasonValue2">4.5°C</strong></div>
+            <div class="fusion-input-pill"><span id="seasonIcon3">🧪</span><span id="seasonLabel3">Samples analyzed</span><strong id="seasonValue3">1,688</strong></div>
+            <div class="fusion-input-pill"><span id="seasonIcon4">📷</span><span id="seasonLabel4">Sensor source</span><strong id="seasonValue4">P2 Pro</strong></div>
+          </div>
+        </article>
+
+        <article class="semantic-encoder-card" aria-label="Semantic encoder">
+          <b>Semantic encoder</b>
+          <span>extract</span>
+          <i></i>
+          <span>verify</span>
+          <i></i>
+          <span>act</span>
+        </article>
+
+        <article class="fusion-card semantic-payoff semantic-event-card">
+          <h3>Receiver-ready semantic packet</h3>
+          <div class="packet-preview-grid">
+            <div><small>Risk</small><b data-evidence="risk">HIGH</b></div>
+            <div><small>Trust</small><b data-evidence="trustScore">0.96</b></div>
+            <div><small>Freshness</small><b data-evidence="freshness">12 s</b></div>
+            <div><small>Action</small><b data-evidence="actionShort">TSR</b></div>
+          </div>
+          <details class="semantic-packet-details">
+            <summary>Open full semantic packet</summary>
+            <pre class="semantic-object phase4" id="seasonSemanticJson">{
+  "task_id": "rail_heat_safety_monitoring",
+  "event_type": "thermal_hotspot",
+  "receiver_goal": "issue safe railway track action",
+  "risk_label": "high",
+  "confidence": 0.96,
+  "freshness_s": 12,
+  "provenance": "P2Pro/TS-04",
+  "integrity": "signed",
+  "recommended_action": "issue_tsr"
+}</pre>
+          </details>
+          <div class="semantic-event-badges">
+            <span>Risk <b data-evidence="risk">HIGH</b></span>
+            <span>Trust <b data-evidence="trustScore">0.96</b></span>
+            <span>Freshness <b data-evidence="freshness">12 s</b></span>
+            <span>Action <b data-evidence="actionShort">TSR</b></span>
+          </div>
+        </article>
+      </div>
+
+      <div class="meaning-retention-grid">
+        <article><span>Discard</span><b>raw pixels</b><small>too much for the link</small></article>
+        <article><span>Preserve</span><b>risk + trust + freshness</b><small>the fields the receiver actually needs</small></article>
+        <article><span>Deliver</span><b data-evidence="action">issue_tsr</b><small>one policy-ready action</small></article>
+      </div>
+      <div class="grounding-note"><strong>Operator point:</strong> the packet keeps the decision, trust state, and action target while dropping the payload burden.</div>
+    </section>

@@ -1,0 +1,163 @@
+  /* Phase 3 sensing screen */
+  .sensing-layout {
+    display: grid;
+    grid-template-columns: 1.2fr .8fr;
+    gap: 14px;
+    align-items: stretch;
+  }
+  .thermal-card {
+    position: relative;
+    min-height: 230px;
+    overflow: hidden;
+    border-radius: 14px;
+    border: 1px solid rgba(255,255,255,.14);
+    background:
+      radial-gradient(circle at 66% 47%, rgba(255,60,40,.92) 0 8%, rgba(255,149,64,.72) 9% 15%, rgba(255,224,130,.42) 16% 22%, rgba(48,124,158,.40) 23% 44%, rgba(16,44,70,.92) 45% 100%),
+      linear-gradient(135deg, rgba(10,28,44,.92), rgba(4,12,20,.96));
+    box-shadow: inset 0 0 60px rgba(0,0,0,.45), 0 18px 46px rgba(0,0,0,.28);
+  }
+  .thermal-grid-lines {
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(rgba(255,255,255,.08) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,.08) 1px, transparent 1px);
+    background-size: 28px 28px;
+    opacity: .33;
+  }
+  .rail-shape {
+    position: absolute;
+    left: 12%;
+    right: 12%;
+    bottom: 26%;
+    height: 18px;
+    border-radius: 999px;
+    background: rgba(245,248,255,.54);
+    box-shadow: 0 12px 0 rgba(245,248,255,.30), 0 -12px 0 rgba(245,248,255,.24);
+    transform: rotate(-6deg);
+  }
+  .hotspot-marker {
+    position: absolute;
+    right: 25%;
+    top: 34%;
+    width: 110px;
+    height: 110px;
+    border-radius: 50%;
+    border: 2px solid rgba(255,255,255,.92);
+    box-shadow: 0 0 0 24px rgba(255,59,48,.20), 0 0 80px rgba(255,59,48,.95);
+    animation: hotspotPulse 1.5s ease-in-out infinite;
+  }
+  .thermal-label {
+    position: absolute;
+    left: 14px;
+    top: 14px;
+    padding: 8px 10px;
+    border-radius: 999px;
+    font-size: var(--font-sm);
+    font-weight: 1000;
+    letter-spacing: .09em;
+    text-transform: uppercase;
+    background: rgba(8,17,28,.62);
+    border: 1px solid rgba(255,255,255,.18);
+  }
+  .thermal-temp {
+    position: absolute;
+    right: 14px;
+    bottom: 14px;
+    font-size: var(--font-hero);
+    font-weight: 1000;
+    color: #ffe082;
+    text-shadow: 0 0 20px rgba(255,224,130,.35);
+  }
+  .real-thermal-card {
+    background: #081421;
+  }
+  .thermal-preview-img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: saturate(1.25) contrast(1.08) brightness(.9);
+    transform: rotate(-90deg) scale(1.34);
+  }
+  .thermal-image-shade {
+    position: absolute;
+    inset: 0;
+    background:
+      linear-gradient(180deg, rgba(3,10,16,.24), rgba(3,10,16,.08) 44%, rgba(3,10,16,.42)),
+      radial-gradient(circle at 56% 56%, rgba(255,95,80,.16), transparent 34%);
+    pointer-events: none;
+  }
+  .real-hotspot-marker {
+    left: 50%;
+    top: 44%;
+    right: auto;
+    width: 86px;
+    height: 86px;
+    transform: translate(-50%, -50%);
+    border-color: rgba(255,255,255,.88);
+    box-shadow: 0 0 0 18px rgba(255,59,48,.18), 0 0 54px rgba(255,95,80,.72);
+  }
+  .sensing-side {
+    display: grid;
+    gap: 10px;
+  }
+  .sensor-meta, .detection-result {
+    border: 1px solid rgba(255,255,255,.12);
+    background: rgba(255,255,255,.055);
+    border-radius: 12px;
+    padding: 13px;
+  }
+  .sensor-meta b, .detection-result b {
+    display: block;
+    margin-bottom: 8px;
+    font-size: var(--font-md);
+    text-transform: uppercase;
+    letter-spacing: .09em;
+  }
+  .sensor-meta span {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 7px 0;
+    color: rgba(255,255,255,.70);
+    font-size: var(--font-md);
+    border-bottom: 1px solid rgba(255,255,255,.08);
+  }
+  .sensor-meta span:last-child { border-bottom: 0; }
+  .sensor-meta strong { color: #fff; }
+  .detection-result {
+    background: rgba(255,59,48,.10);
+    border-color: rgba(255,59,48,.28);
+  }
+  .detection-result p { margin: 0; color: rgba(255,255,255,.76); font-size: var(--font-md); line-height: 1.45; }
+  .alert-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    margin-bottom: 10px;
+    color: #fff;
+    font-size: var(--font-sm);
+    font-weight: 1000;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+  }
+  .alert-pill::before {
+    content: "";
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    background: #ff3b30;
+    box-shadow: 0 0 16px #ff3b30;
+  }
+  @keyframes hotspotPulse {
+    0%, 100% { transform: scale(.85); opacity: .75; }
+    50% { transform: scale(1.25); opacity: 1; }
+  }
+  @media (max-width: 760px) {
+    .sensing-layout { grid-template-columns: 1fr; }
+  }
+
+
+

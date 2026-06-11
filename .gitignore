@@ -1,0 +1,18 @@
+.DS_Store
+__pycache__/
+*.py[cod]
+
+# Large local evidence sources and backups are intentionally not committed.
+ThermalData/
+ThermalData-*.zip
+Ensure6gDemo1/
+ensure6g_streamlit_app_storyboard_backup/
+railway_overlay_html_animation/
+railway_overlay_streamlit/
+ensure6g_streamlit_app/assets/ensure6g_synced_train_story.html
+
+# Local Streamlit/runtime state
+.streamlit/
+.env
+.venv/
+venv/
